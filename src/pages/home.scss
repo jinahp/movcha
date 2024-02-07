@@ -1,7 +1,12 @@
-.home-wrapper {
-  padding: 0 20px;
+main {
+  .home-wrapper {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
-  @media (min-width: 769px) {
-    padding: 0 50px;
+    @media (min-width: 769px) {
+      padding: 0 50px;
+    }
   }
 }
