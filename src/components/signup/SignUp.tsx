@@ -6,8 +6,8 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 interface FormInput {
   name: string;
   email: string;
-  password: number;
-  passwordConfirm: number;
+  password: string;
+  passwordConfirm: string;
   terms: boolean;
 }
 

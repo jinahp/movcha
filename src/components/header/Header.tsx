@@ -30,7 +30,7 @@ const Header = () => {
         <button
           className="header-btn-login"
           onClick={() => {
-            navigate('/login');
+            navigate('/signin');
           }}
         >
           로그인
