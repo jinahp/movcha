@@ -17,7 +17,7 @@ const Header = () => {
         alt="logo"
         className="header-logo"
         onClick={() => {
-          navigate(-1);
+          navigate('/');
         }}
       />
       <div className="header-btn-wrapper">
