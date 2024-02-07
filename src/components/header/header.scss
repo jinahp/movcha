@@ -35,19 +35,35 @@ header {
       width: 35px;
       height: 40px;
       cursor: pointer;
+      transition: scale 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     .header-btn-login {
       padding: 5px;
       font-size: 1.1rem;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        color: var(--Light-Red);
+      }
     }
 
     .header-btn-signup {
-      padding: 10px;
+      padding: 10px 20px;
       border-radius: 10px;
       background-color: var(--White);
       color: var(--Black);
       font-size: 1.1rem;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: var(--Light-Red);
+        color: var(--White);
+      }
     }
   }
 }
