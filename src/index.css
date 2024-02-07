@@ -16,11 +16,18 @@ html {
   height: 100%;
 }
 
-body,
 button,
 input,
 a {
   all: unset;
+  box-sizing: border-box;
+}
+
+input[type='checkbox' i] {
+  background-color: initial;
+  cursor: default;
+  appearance: auto;
+  margin: 10px 10px 10px 0;
 }
 
 body {
@@ -28,10 +35,14 @@ body {
   font-family: 'Pretendard', sans-serif;
   font-size: 20px;
   color: var(--White);
+  height: 100%;
+  margin: 0;
+  position: relative;
 }
 
 #root {
   min-width: 360px;
+  overflow-y: scroll;
 }
 
 button {
@@ -64,8 +75,10 @@ p {
 
 .scrollBar {
   width: 100%;
-  height: 100%;
-  overflow-y: scroll;
+
+  @media (min-width: 768px) {
+    height: 100%;
+  }
 }
 
 /* 아래의 모든 코드는 영역::코드로 사용 */
@@ -76,7 +89,6 @@ p {
 .scrollBar::-webkit-scrollbar-thumb {
   height: 30%; /* 스크롤바의 길이 */
   background: var(--Black);
-
   border-radius: 10px;
 }
 

@@ -1,0 +1,157 @@
+.signup-wrapper {
+  width: 100%;
+  padding: 0 10px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../../assets/img-interstellar2.jpg);
+  background-size: cover;
+  background-position: left;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  @media (min-width: 769px) {
+    height: 100%;
+    padding: 0 50px;
+  }
+
+  @media (max-width: 768px) {
+    height: calc(100vh + 180px);
+  }
+}
+
+.header-logo {
+  width: 150px;
+  margin: 20px 0;
+
+  @media (min-width: 769px) {
+    width: 300px;
+  }
+}
+
+.header-logo:hover {
+  animation: jello-horizontal 0.9s both;
+  cursor: pointer;
+}
+
+.signup-container {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  @media (min-width: 769px) {
+    width: 60%;
+    padding: 50px 30px;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  gap: 5px;
+
+  @media (min-width: 769px) {
+    gap: 10px;
+  }
+}
+
+.signup-title {
+  margin: 20px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+
+  @media (min-width: 769px) {
+    font-size: 2.5rem;
+  }
+}
+
+.signup-label {
+  font-size: 1rem;
+
+  @media (min-width: 769px) {
+    font-size: 1.3rem;
+  }
+}
+
+.signup-input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 15px 15px;
+  border-radius: 10px;
+  border: 1px solid #ffffff65;
+  font-size: 1rem;
+
+  @media (min-width: 769px) {
+    font-size: 1.1rem;
+    padding: 15px 20px;
+  }
+}
+
+.signup-input::placeholder {
+  color: var(--Gray);
+}
+
+.signup-terms {
+  display: flex;
+  align-items: center;
+}
+
+.signup-terms input[type='checkbox'] {
+  transform: scale(1.1);
+  margin-left: 3px;
+
+  &:checked {
+    accent-color: var(--Red);
+  }
+
+  @media (min-width: 769px) {
+    transform: scale(1.3);
+  }
+}
+
+.signup-error {
+  color: var(--Yellow);
+  font-size: 0.9rem;
+  margin: 0 0 3px;
+
+  @media (min-width: 769px) {
+    font-size: 1rem;
+  }
+}
+
+.signup-terms-label {
+  font-size: 0.9rem;
+
+  @media (min-width: 769px) {
+    font-size: 1.1rem;
+  }
+}
+
+.signup-button-group {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-btn {
+  width: fit-content;
+  background-color: var(--Red);
+  padding: 15px 20px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  font-size: 1rem;
+  &:disabled {
+    background-color: var(--Gray);
+  }
+  &:hover:not(:disabled) {
+    background-color: var(--Light-Red);
+  }
+
+  @media (min-width: 769px) {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+  }
+}
