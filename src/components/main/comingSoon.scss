@@ -1,0 +1,25 @@
+.coming-soon-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 100px 0;
+  padding: 30px 0;
+  gap: 20px;
+  align-items: center;
+
+  .coming-soon-title {
+    color: var(--Red);
+    font-size: 2.5rem;
+
+    @media (min-width: 769px) {
+      font-size: 3rem;
+    }
+  }
+
+  .coming-soon-title-text {
+    font-size: 1.1rem;
+
+    @media (min-width: 769px) {
+      font-size: 1.3em;
+    }
+  }
+}
