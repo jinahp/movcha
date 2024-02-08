@@ -5,6 +5,10 @@
   margin: 50px 0;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media (min-width: 769px) {
+    padding: 0 50px;
+  }
 }
 
 .coming-soon-card-wrapper {
@@ -14,25 +18,24 @@
   width: 100%;
 
   @media (min-width: 769px) {
-    width: calc(50% - 15px);
+    width: 45%;
   }
 
   @media (min-width: 1200px) {
-    width: calc(
-      33.33% - 20px
-    ); /* 데스크탑에서는 카드를 세 열로 표시하기 위해 33.33%의 너비를 차지하도록 설정 */
+    width: 300px;
+  }
+
+  @media (min-width: 1350px) {
+    width: 350px;
   }
 
   .coming-soon-card-info {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    width: fit-content;
 
     @media (min-width: 280px) and (max-width: 768px) {
-      display: flex;
-      margin: 0 auto;
-      align-items: center;
+      text-align: center;
     }
   }
 
@@ -40,8 +43,15 @@
     font-size: 1.3rem;
     font-weight: bold;
     color: var(--Yellow);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
     @media (min-width: 769px) {
+      font-size: 1.7rem;
+    }
+
+    @media (min-width: 1200px) {
       font-size: 2rem;
     }
   }
@@ -64,7 +74,6 @@
 
   .coming-soon-card-img {
     width: 100%;
-    min-width: 300px;
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
@@ -96,6 +105,33 @@
 
   .coming-soon-card-img-container:hover .coming-soon-card-img-text {
     transition: opacity 0.3s ease-in-out;
-    opacity: 1; /* hover 시에 텍스트 표시 */
+    opacity: 1;
   }
+}
+
+.coming-soon-btn-show-more-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .coming-soon-btn-show-more {
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: var(--Red);
+    color: var(--White);
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--Light-Red);
+    }
+  }
+}
+
+.card-desktop {
+  width: calc(25% - 15px);
+}
+
+.card-mobile {
+  width: 100%;
 }
