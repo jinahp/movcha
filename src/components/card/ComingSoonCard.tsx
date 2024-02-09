@@ -20,6 +20,7 @@ interface Movie {
 interface Img {
   src: string;
   alt?: string;
+  onClick: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
 const MOVIE_INCREMENT = 3;
@@ -56,38 +57,75 @@ const ComingSoonCard = () => {
       {
         src: noryang,
         alt: '노량: 죽음의 바다',
+        onClick: () =>
+          window.open(
+            'https://watcha.com/contents/mdEmN6E?search_id=595c5f77-8ac9-4fcd-a162-4f4dffe90581',
+            '_blank',
+          ),
       },
       {
         src: seoul,
         alt: '서울의 봄',
+        onClick: () =>
+          window.open(
+            'https://watcha.com/contents/mWvqVXx?search_id=1a1833aa-817f-4ef5-910e-2dfffd702830',
+            '_blank',
+          ),
       },
       {
         src: zzanggu,
         alt: '신차원! 짱구는 못말려 더 무비 초능력 대결전 ~날아라 수제김밥~',
+        onClick: () => window.open('https://tv.naver.com/v/43571521', '_blank'),
       },
       {
         src: aquaman,
         alt: '아쿠아맨과 로스트 킹덤',
+        onClick: () =>
+          window.open(
+            'https://www.wavve.com/player/movie?movieid=MV_CD01_WR0000011731&autoplay=y',
+            '_blank',
+          ),
       },
       {
         src: troll,
         alt: '트롤: 밴드 투게더',
+        onClick: () =>
+          window.open(
+            'https://watcha.com/contents/mOVPPbY?utm_campaign=metadata&utm_source=naver&utm_medium=search',
+            '_blank',
+          ),
       },
       {
         src: pororo,
         alt: '뽀로로 극장판 슈퍼스타 대모험',
+        onClick: () =>
+          window.open(
+            'https://watcha.com/contents/m5nXr1o?utm_campaign=metadata&utm_source=naver&utm_medium=search',
+            '_blank',
+          ),
       },
       {
         src: doti,
         alt: '도티와 영원의 탑',
+        onClick: () =>
+          window.open(
+            'https://www.wavve.com/player/movie?movieid=MV_MI01_MI0000000161&autoplay=y',
+            '_blank',
+          ),
       },
       {
         src: monster,
         alt: '괴물',
+        onClick: () => window.open('https://tv.naver.com/v/42859610', '_blank'),
       },
       {
         src: octo,
         alt: '바다 탐험대 옥토넛 어보브 앤 비욘드: 버드, 옥토경보를 울려라!',
+        onClick: () =>
+          window.open(
+            'https://watcha.com/contents/mdEmN6E?utm_campaign=metadata&utm_source=naver&utm_medium=search',
+            '_blank',
+          ),
       },
     ];
 
@@ -95,14 +133,15 @@ const ComingSoonCard = () => {
       movieImgs.map((img, index) => ({
         src: img.src,
         alt: `Movie Image ${index + 1}`,
+        onClick: img.onClick,
       })),
     );
   }, []);
 
-  const handleClick = (e: MouseEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    alert('Sorry, this is just a demo. You cannot watch the movie.');
-  };
+  // const handleClick = (e: MouseEvent<HTMLDivElement>) => {
+  //   e.preventDefault();
+  //   alert('Sorry, this is just a demo. You cannot watch the movie.');
+  // };
 
   const handleShowMore = () => {
     setDisplayedMovies((prevCount) => prevCount + MOVIE_INCREMENT);
@@ -123,7 +162,7 @@ const ComingSoonCard = () => {
             key={index}
             movie={movie}
             image={images[index]}
-            handleClick={handleClick}
+            onClick={images[index].onClick}
           />
         ))}
       {images.length > cardCount && (
@@ -143,10 +182,10 @@ const ComingSoonCard = () => {
 interface MovieCardProps {
   movie: Movie;
   image: Img;
-  handleClick: (e: MouseEvent<HTMLDivElement>) => void;
+  onClick: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
-const MovieCard = ({ movie, image, handleClick }: MovieCardProps) => {
+const MovieCard = ({ movie, image, onClick }: MovieCardProps) => {
   return (
     <div className="coming-soon-card-wrapper">
       <div className="coming-soon-card-info">
@@ -155,7 +194,7 @@ const MovieCard = ({ movie, image, handleClick }: MovieCardProps) => {
           개봉일: {movie.openDt}
         </div>
       </div>
-      <div className="coming-soon-card-img-container" onClick={handleClick}>
+      <div className="coming-soon-card-img-container" onClick={onClick}>
         <img
           key={image.src}
           src={image.src}
