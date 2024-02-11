@@ -27,6 +27,7 @@ const Header = () => {
           className="header-chat"
           onClick={handlePop}
         />
+        <div className="header-chat-box"></div>
         <button
           className="header-btn-login"
           onClick={() => {
