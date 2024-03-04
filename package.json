@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "server": "cd server && npm start",
     "build": "tsc && vite build"
   },
   "dependencies": {
